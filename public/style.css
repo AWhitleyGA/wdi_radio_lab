@@ -22,13 +22,12 @@ header {
   outline: none;
 }
 main {
-  padding-top: 100px;
-  width: 800px;
-  margin: auto;
+  padding: 100px 0;
 }
 
 .song-gallery {
-  width: 100%;
+  width: 800px;
+  margin: auto;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -79,4 +78,7 @@ song-player {
   bottom: 0;
   background: black;
   color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }

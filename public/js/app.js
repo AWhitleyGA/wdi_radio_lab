@@ -18,8 +18,6 @@ angular
     SongIndexControllerFunction
   ])
   .directive("songPlayer", [
-    "$stateParams",
-    "$firebaseArray",
     SongPlayerFunction
   ])
 
@@ -46,12 +44,14 @@ function SongIndexControllerFunction($scope, $firebaseArray) {
   }
 }
 
-function SongPlayerFunction($stateParams, $firebaseArray) {
+function SongPlayerFunction() {
   return{
-    template: '<h2>{{currentSong}}</h2>',
+    templateUrl: 'js/ng-views/song_player.html',
+    scope: {
+      song: "="
+    },
     link: (scope) => {
-      let ref = firebase.database().ref().child("songs")
-      scope.currentSong = $stateParams.id
+      console.log(scope.song)
     }
   }
 }
